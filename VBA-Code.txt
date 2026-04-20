@@ -1,0 +1,124 @@
+Option Explicit
+
+Function SpellNumber(ByVal MyValue As Variant) As String
+    Dim NumStr As String
+    Dim DecimalPart As String
+    Dim Result As String
+    
+    If IsEmpty(MyValue) Or Trim(MyValue) = "" Then
+        SpellNumber = ""
+        Exit Function
+    End If
+    
+    If Not IsNumeric(MyValue) Then
+        SpellNumber = "Invalid Input"
+        Exit Function
+    End If
+    
+    NumStr = Replace(CStr(MyValue), ",", "")
+    
+    ' Handle negative
+    If Left(NumStr, 1) = "-" Then
+        Result = "Minus "
+        NumStr = Mid(NumStr, 2)
+    End If
+    
+    ' Split decimal
+    If InStr(NumStr, ".") > 0 Then
+        DecimalPart = Mid(NumStr, InStr(NumStr, ".") + 1)
+        NumStr = Left(NumStr, InStr(NumStr, ".") - 1)
+    End If
+    
+    ' Convert integer part
+    Result = Result & ConvertNumber(NumStr)
+    
+    ' Convert decimal part
+    If DecimalPart <> "" Then
+        Result = Result & " Point"
+        Dim i As Integer
+        For i = 1 To Len(DecimalPart)
+            Result = Result & " " & GetDigitWord(Mid(DecimalPart, i, 1))
+        Next i
+    End If
+    
+    SpellNumber = Application.WorksheetFunction.Trim(Result)
+End Function
+
+
+Private Function ConvertNumber(ByVal NumStr As String) As String
+    Dim n As Double
+    n = Val(NumStr)
+    
+    If n = 0 Then
+        ConvertNumber = "Zero"
+        Exit Function
+    End If
+    
+    ConvertNumber = ConvertCrores(n)
+End Function
+
+
+Private Function ConvertCrores(ByVal n As Double) As String
+    Dim Result As String
+    
+    If n >= 10000000 Then
+        Result = ConvertCrores(Int(n / 10000000)) & " Crore "
+        n = n Mod 10000000
+    End If
+    
+    If n >= 100000 Then
+        Result = Result & ConvertCrores(Int(n / 100000)) & " Lakh "
+        n = n Mod 100000
+    End If
+    
+    If n >= 1000 Then
+        Result = Result & ConvertCrores(Int(n / 1000)) & " Thousand "
+        n = n Mod 1000
+    End If
+    
+    If n >= 100 Then
+        Result = Result & ConvertCrores(Int(n / 100)) & " Hundred "
+        n = n Mod 100
+    End If
+    
+    If n > 0 Then
+        Result = Result & ConvertTens(n)
+    End If
+    
+    ConvertCrores = Result
+End Function
+
+
+Private Function ConvertTens(ByVal n As Integer) As String
+    Dim Units As Variant
+    Dim Tens As Variant
+    
+    Units = Array("", "One", "Two", "Three", "Four", "Five", "Six", "Seven", _
+                  "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", _
+                  "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen")
+    
+    Tens = Array("", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", _
+                 "Seventy", "Eighty", "Ninety")
+    
+    If n < 20 Then
+        ConvertTens = Units(n)
+    Else
+        ConvertTens = Tens(Int(n / 10)) & " " & Units(n Mod 10)
+    End If
+End Function
+
+
+Private Function GetDigitWord(ByVal d As String) As String
+    Select Case d
+        Case "0": GetDigitWord = "Zero"
+        Case "1": GetDigitWord = "One"
+        Case "2": GetDigitWord = "Two"
+        Case "3": GetDigitWord = "Three"
+        Case "4": GetDigitWord = "Four"
+        Case "5": GetDigitWord = "Five"
+        Case "6": GetDigitWord = "Six"
+        Case "7": GetDigitWord = "Seven"
+        Case "8": GetDigitWord = "Eight"
+        Case "9": GetDigitWord = "Nine"
+    End Select
+End Function

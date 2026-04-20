@@ -63,7 +63,6 @@ SpellNumber.xlam
 ## **2️⃣ Open Microsoft Excel**
 
 * Open Excel normally
-Screenshots/5.png
 
 ---
 

@@ -14,7 +14,7 @@ This project solves that limitation by introducing a **custom VBA-based global f
 
 ✅ Works across **all Excel files** (via Add-in)  
 ✅ Converts **integers, decimals, and negative numbers**  
-✅ Supports **Indian Number System (Thousand, Lakh, Crore)**
+✅ Supports **Indian Number System (Thousand, Lakh, Crore)** 
 ✅ Handles **comma-separated values automatically**  
 ✅ Clean and reusable implementation
 

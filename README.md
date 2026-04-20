@@ -197,26 +197,6 @@ Excel Add-in (*.xlam)
 
 ---
 
-```
-Excel-SpellNumber-Add-In/
-│
-├── Screenshots/
-│   ├── step1_vba.png
-│   ├── step2_code.png
-│   ├── step3_xlsm.png
-│   ├── step4_xlam.png
-│   ├── step5_addin.png
-│   └── step6_usage.png
-│
-├── SpellNumber.xlam
-├── SpellNumber.xlsm
-├── VBA-Code.txt
-├── README.md
-└── LICENSE
-```
-
----
-
 # **📦 Sharing with Others**
 
 * Share the `.xlam` file
@@ -241,8 +221,14 @@ Excel-SpellNumber-Add-In/
 
 ---
 
-# **🔗 Connect with Me**
+## **🔗 Connect with Me**  
 
-Hi! I'm **Shivam Singh**, a **Data Analyst** passionate about building automation tools and data-driven solutions.
+Hi! I'm **Shivam Singh**, a **Data Analyst** passionate about transforming raw data into **actionable insights**.  
+Follow me for more data-related content!  
 
-🚀 **Stay tuned for more automation & data projects!**
+[![YouTube](https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@LearnWithShivam-04)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shivam-singh-linkdin/)
+[![Tableau](https://img.shields.io/badge/Tableau-005F9E?style=for-the-badge&logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/shivam.singh4467/vizzes) 
+[![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Shivam-Singh-04)  
+
+🚀 **Stay tuned for more data-driven projects!**

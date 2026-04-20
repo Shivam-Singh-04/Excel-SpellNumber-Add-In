@@ -2,7 +2,7 @@
 
 Welcome to the **Excel Number to Words Converter** repository! 
 This project provides a powerful **Excel Add-in (.xlam)** that enables users to convert numeric values into **readable words** directly inside Excel using a simple formula.
-![Cover Image](Cover%Image.png)
+![Cover Image](Cover Image.png)
 
 ---
 
